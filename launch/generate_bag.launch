@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="my_message_package" name="message_publisher" type="message_publisher.py" />
+	<node pkg="rosbag" name="rosbag" type="record" output="screen" args="-a -O $(find my_message_package)/raw.bag" />
+</launch>
