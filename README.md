@@ -89,3 +89,5 @@ class _nav_msgs__Odometry(genpy.Message):
 ```
 
 In the ```raw.py```, class name is ```Odometry```, which should be subsitituted with ```_my_message_package__Odometry```. But in the ```tmps_UQuR.py```, it is substituted with ```_nav_msgs__Odometry```, which causes the problem.
+
+The problem happens when the message script is dynamically generated. And rosbag filter will generate the message script dynamically. The stationary version is OK because it does not substitute class name.
