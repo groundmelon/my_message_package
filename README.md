@@ -5,11 +5,11 @@ debug package for https://github.com/ros/genpy/issues/37
 
 1. Compile this package using catkin_make in your workspace
 
-2. Use ```> roslaunch my_message_package generate_bag.launch ``` to generate a sample ROS bag file. This bag will be put in the "my_message_package" package folder.
+2. Use ```> roslaunch my_message_package generate_bag.launch ``` to generate a sample ROS bag file. This bag will be put in the "my_message_package" package folder. You can use ```ctrl-c``` to kill it after recording for about 10 seconds.
 
-3. Subsititute the modified **my_message_package/src/dynamic.modified.py** to **/opt/ros/indigo/lib/python2.7/dist-packages/genpy/dynamic.py**. A backup of the original file **dynamic.py** is recommended. The modified version of **dynamic.py** will print some useful information to track the bug, eliminate deleting the generated tmp files and generate a **raw.py**.
+3. Subsititute the modified version **my_message_package/src/dynamic.modified.py** to **/opt/ros/indigo/lib/python2.7/dist-packages/genpy/dynamic.py**. A backup of the original file **dynamic.py** is recommended. The modified version of **dynamic.py** will print some useful information to track the bug, eliminate deleting the generated tmp files and generate a **raw.py**.
 
-4. Use rosbag filter to trigger the bag:
+4. Use rosbag filter to trigger the bug:
 ``` bash
 > roscd my_message_package
 > rosbag filter raw.bag filtered.bag 'topic=="/message_generator/myodom"'
