@@ -176,7 +176,7 @@ def generate_dynamic(core_type, msg_cat):
     raw_file.write(raw_text.encode())
     raw_file.close()
 
-    print('\ncore_type: {} file_path:{}'.format(core_type, tmp_file.name))
+    print('\ncore_type: {} file_path:{}'.format(core_type, raw_file.name))
     ################################################################
 
     # write the entire text to a file and import it (it will get deleted when tmp_dir goes - above)
